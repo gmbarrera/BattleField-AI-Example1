@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 
+import ia.battle.camp.BattleField;
 import ia.battle.camp.FieldCell;
 import ia.battle.camp.Move;
+import ia.exceptions.OutOfMapException;
 
 
 public class ExampleMove extends Move {
@@ -12,8 +14,13 @@ public class ExampleMove extends Move {
 		return destino;
 	}
 
-	public void setDestino(FieldCell destino) {
-		this.destino = destino;
+	public void setDestino(int x, int y) {
+		try {
+			destino = BattleField.getInstance().getFieldCell(x, y);
+		} catch (OutOfMapException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
 	}
 
 	@Override
@@ -25,5 +32,6 @@ public class ExampleMove extends Move {
 		
 		return path;
 	}
+
 
 }

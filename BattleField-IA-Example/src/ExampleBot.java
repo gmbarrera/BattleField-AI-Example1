@@ -1,4 +1,5 @@
 import ia.battle.camp.Action;
+import ia.battle.camp.ConfigurationManager;
 import ia.battle.camp.Warrior;
 import ia.exceptions.RuleException;
 
@@ -17,8 +18,13 @@ public class ExampleBot extends Warrior {
 
 			ExampleMove m = new ExampleMove();
 
-			m.setDestino(getPosition());
-			
+			int x = getPosition().getX(), y = getPosition().getY();
+
+			if (x < ConfigurationManager.getInstance().getMapWidth()) {
+				m.setDestino(++x, y);
+
+				System.out.println(x + "  " + y);
+			}
 			return m;
 		}
 
