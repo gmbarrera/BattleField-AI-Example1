@@ -1,7 +1,6 @@
 import ia.battle.camp.Action;
 import ia.battle.camp.BattleField;
 import ia.battle.camp.ConfigurationManager;
-import ia.battle.camp.FieldCell;
 import ia.battle.camp.FieldCellType;
 import ia.battle.camp.Warrior;
 import ia.exceptions.OutOfMapException;
@@ -32,9 +31,9 @@ public class ExampleBot extends Warrior {
 				x--;
 			
 			try {
-				if (x < ConfigurationManager.getInstance().getMapWidth()
+				if (x < ConfigurationManager.getInstance().getMapWidth() && x > 0 
 						&& BattleField.getInstance().getFieldCell(x, y)
-								.getFieldCellType() != FieldCellType.BLOCKED)
+								.getFieldCellType() != FieldCellType.BLOCKED )
 					
 					m.setDestino(x, y);
 				else {
