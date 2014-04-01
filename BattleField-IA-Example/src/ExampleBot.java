@@ -1,9 +1,15 @@
 import ia.battle.camp.Action;
+import ia.battle.camp.BattleField;
 import ia.battle.camp.ConfigurationManager;
+import ia.battle.camp.FieldCell;
+import ia.battle.camp.FieldCellType;
 import ia.battle.camp.Warrior;
+import ia.exceptions.OutOfMapException;
 import ia.exceptions.RuleException;
 
 public class ExampleBot extends Warrior {
+
+	private boolean direccionHorizontal = true;
 
 	public ExampleBot(String name, int health, int defense, int strength,
 			int speed, int range) throws RuleException {
@@ -20,15 +26,30 @@ public class ExampleBot extends Warrior {
 
 			int x = getPosition().getX(), y = getPosition().getY();
 
-			if (x < ConfigurationManager.getInstance().getMapWidth()) {
-				m.setDestino(++x, y);
+			if (direccionHorizontal)
+				x++;
+			else
+				x--;
+			
+			try {
+				if (x < ConfigurationManager.getInstance().getMapWidth()
+						&& BattleField.getInstance().getFieldCell(x, y)
+								.getFieldCellType() != FieldCellType.BLOCKED)
+					
+					m.setDestino(x, y);
+				else {
+					direccionHorizontal = !direccionHorizontal;
+					m.setDestino(--x, y);
+				}
 
-				System.out.println(x + "  " + y);
+			} catch (OutOfMapException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
+
 			return m;
 		}
 
 		return null;
 	}
-
 }
