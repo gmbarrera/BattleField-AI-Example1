@@ -9,7 +9,11 @@ public class ExampleManager extends WarriorManager {
 	@Override
 	public Warrior getNextWarrior() throws RuleException {
 
-		return new ExampleBot("Ejemplito" + id++, 60, 10, 10, 10, 10);
+		return new ExampleBot("ExampleBot" + id++, 60, 10, 10, 10, 10);
 	}
 
+	@Override
+	public String getName() {
+		return "WarriorManager Example";
+	}
 }

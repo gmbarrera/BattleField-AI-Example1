@@ -50,6 +50,11 @@ public class ExampleTest {
 			public void warriorMoved(Warrior warrior, FieldCell from, FieldCell to) {
 				System.out.println(warrior.getName() + " moved from " + from.toString() + " to " + to.toString());
 			}
+
+			@Override
+			public void figthFinished(WarriorManager winner) {
+				System.out.println("The winner is " + winner.getName());
+			}
 		});
 		
 		bf.fight();
