@@ -38,7 +38,10 @@ public class ExampleBot extends Warrior {
 					m.setDestino(x, y);
 				else {
 					direccionHorizontal = !direccionHorizontal;
-					m.setDestino(--x, y);
+					if (direccionHorizontal)
+						m.setDestino(++x, y);
+					else
+						m.setDestino(--x, y);
 				}
 
 			} catch (OutOfMapException e) {
