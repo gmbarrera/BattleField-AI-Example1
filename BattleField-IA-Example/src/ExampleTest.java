@@ -2,6 +2,7 @@
 
 import ia.battle.camp.BattleField;
 import ia.battle.camp.BattleFieldListener;
+import ia.battle.camp.FieldCell;
 import ia.battle.camp.WarriorManager;
 import ia.battle.camp.Warrior;
 
@@ -22,12 +23,12 @@ public class ExampleTest {
 			
 			@Override
 			public void warriorAttacked(Warrior attacked, Warrior attacker, int damage) {
-				System.out.println(attacked.getName() + " is attacked for " + attacker.getName() + " (" + damage +")");
+				System.out.println(attacked.getName() + " is attacked by " + attacker.getName() + " (" + damage +")");
 			}
 			
 			@Override
 			public void turnLapsed(long tick, int turnNumber, Warrior warrior) {
-				System.out.println("Turn of " + warrior.getName() + "\tTick: " + tick);
+				//System.out.println("Turn of " + warrior.getName() + "\tTick: " + tick);
 			}
 			
 			@Override
@@ -43,6 +44,11 @@ public class ExampleTest {
 			@Override
 			public boolean continueFighting() {
 				return true;
+			}
+
+			@Override
+			public void warriorMoved(Warrior warrior, FieldCell from, FieldCell to) {
+				System.out.println(warrior.getName() + " moved from " + from.toString() + " to " + to.toString());
 			}
 		});
 		
