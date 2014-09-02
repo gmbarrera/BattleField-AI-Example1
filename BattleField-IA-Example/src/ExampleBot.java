@@ -1,6 +1,7 @@
 import ia.battle.camp.Action;
 import ia.battle.camp.BattleField;
 import ia.battle.camp.ConfigurationManager;
+import ia.battle.camp.FieldCell;
 import ia.battle.camp.FieldCellType;
 import ia.battle.camp.Warrior;
 import ia.exceptions.OutOfMapException;
@@ -53,5 +54,17 @@ public class ExampleBot extends Warrior {
 		}
 
 		return null;
+	}
+
+	@Override
+	public void wasAttacked(int damage, FieldCell source) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void enemyKilled() {
+		// TODO Auto-generated method stub
+		
 	}
 }
