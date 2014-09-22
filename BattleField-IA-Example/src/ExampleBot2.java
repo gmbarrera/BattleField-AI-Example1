@@ -1,6 +1,5 @@
 import ia.battle.camp.Action;
 import ia.battle.camp.BattleField;
-import ia.battle.camp.ConfigurationManager;
 import ia.battle.camp.FieldCell;
 import ia.battle.camp.FieldCellType;
 import ia.battle.camp.Warrior;
