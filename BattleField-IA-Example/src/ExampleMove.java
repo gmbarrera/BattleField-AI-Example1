@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 import ia.battle.camp.BattleField;
 import ia.battle.camp.FieldCell;
-import ia.battle.camp.Move;
+import ia.battle.camp.actions.Move;
 import ia.exceptions.OutOfMapException;
 
 

@@ -1,8 +1,8 @@
-import ia.battle.camp.Action;
 import ia.battle.camp.BattleField;
 import ia.battle.camp.FieldCell;
 import ia.battle.camp.FieldCellType;
 import ia.battle.camp.Warrior;
+import ia.battle.camp.actions.Action;
 import ia.exceptions.OutOfMapException;
 import ia.exceptions.RuleException;
 

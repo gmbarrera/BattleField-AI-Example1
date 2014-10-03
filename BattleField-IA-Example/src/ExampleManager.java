@@ -7,15 +7,17 @@ import ia.exceptions.RuleException;
 public class ExampleManager extends WarriorManager {
 	
 	private static int id = 0;
-	private Random rnd = new Random();
+	//private Random rnd = new Random();
 	
 	@Override
 	public Warrior getNextWarrior() throws RuleException {
 
-		if (rnd.nextBoolean())
-			return new ExampleBot2("Bot 2" + id++, 60, 10, 10, 10, 10);
+//		if (rnd.nextBoolean())
+//			return new ExampleBot2("Bot 2" + id++, 60, 10, 10, 10, 10);
+//		
+		//return new ExampleBot("Bot 1" + id++, 60, 10, 10, 10, 10);
 		
-		return new ExampleBot("Bot 1" + id++, 60, 10, 10, 10, 10);
+		return new ManualBot("Bot 1" + id++, 60, 10, 10, 10, 10);
 	}
 
 	@Override
