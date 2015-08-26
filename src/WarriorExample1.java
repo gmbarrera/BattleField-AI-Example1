@@ -16,7 +16,7 @@ public class WarriorExample1 extends Warrior {
 	public Action playTurn(long tick, int actionNumber) {
 		// TODO Auto-generated method stub
 		
-		return new Attack(celdaAAtacar);
+		
 		
 		return new Skip();
 	}
